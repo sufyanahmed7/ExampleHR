@@ -51,14 +51,7 @@ On first run the backend auto-creates `apps/backend/data/timeoff.db` and seeds d
 ## Step 4 — Open the app
 
 Go to **http://localhost:5173** and log in with any demo account:
-
-| Role | Email | Password |
-|------|-------|----------|
-| Employee | employee@example.com | password123 |
-| Manager | manager@example.com | password123 |
-| Admin | admin@example.com | password123 |
-
-Or click the quick-fill buttons on the login screen.
+ click the quick-fill buttons on the login screen.
 
 ---
 

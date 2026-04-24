@@ -59,17 +59,6 @@ npm run dev:backend    # NestJS only
 npm run dev:mock       # HCM mock only
 npm run dev:frontend   # React only
 ```
-
----
-
-## Demo Accounts
-
-| Role | Email | Password |
-|---|---|---|
-| Employee | employee@example.com | password123 |
-| Manager | manager@example.com | password123 |
-| Admin | admin@example.com | password123 |
-
 ---
 
 ## API Reference
@@ -126,15 +115,6 @@ POST /hcm/debug/anniversary           Manually trigger anniversary bonus
 POST /hcm/debug/failure-mode          Set failure mode for testing
      body: { mode: "normal"|"error"|"silent", rate?: 0-1 }
 ```
-
-### Environment variables
-```env
-HCM_SILENT_FAILURE_RATE=0.1    # 10% chance of silent failure (default: 0)
-HCM_MOCK_PORT=3001
-HCM_API_KEY=mock-api-key
-```
-
----
 
 ## Test Suite
 
@@ -218,26 +198,5 @@ If the hash matches the last successful batch, ingest is skipped — no redundan
 
 ---
 
-## Environment Variables
-
-```env
-# Backend
-PORT=3000
-NODE_ENV=development
-JWT_SECRET=change-me-in-production
-JWT_EXPIRES_IN=8h
-DATABASE_PATH=./data/timeoff.db
-HCM_BASE_URL=http://localhost:3001
-HCM_API_KEY=mock-api-key
-HCM_TIMEOUT_MS=5000
-RECONCILE_INTERVAL_MS=900000    # 15 minutes
-
-# HCM Mock
-HCM_MOCK_PORT=3001
-HCM_SILENT_FAILURE_RATE=0
-
-# Frontend (Vite)
-VITE_API_BASE_URL=http://localhost:3000
-VITE_APP_TITLE=ExampleHR Time-Off
 ```
 #

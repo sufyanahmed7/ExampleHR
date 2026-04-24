@@ -1,0 +1,24 @@
+{
+  "name": "timeoff-system",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/backend",
+    "apps/hcm-mock",
+    "apps/frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --names \"BACKEND,HCM-MOCK,FRONTEND\" --prefix-colors \"blue,yellow,green\" \"npm run dev --workspace=apps/backend\" \"npm run dev --workspace=apps/hcm-mock\" \"npm run dev --workspace=apps/frontend\"",
+    "dev:backend": "npm run dev --workspace=apps/backend",
+    "dev:mock": "npm run dev --workspace=apps/hcm-mock",
+    "dev:frontend": "npm run dev --workspace=apps/frontend",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspace=apps/backend",
+    "test:coverage": "npm run test:coverage --workspace=apps/backend",
+    "test:e2e": "npm run test:e2e --workspace=apps/backend",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
